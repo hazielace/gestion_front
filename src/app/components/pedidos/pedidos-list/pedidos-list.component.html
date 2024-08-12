@@ -1,0 +1,41 @@
+<div class="row col-12 p-4">
+    <h2 class="mb-4">Pedidos</h2>
+    
+    
+    <div class="text-end mb-4">
+        <button class="btn btn-primary" routerLink="/nuevo-pedido">Nuevo pedido</button>
+    </div>
+    
+    
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>CLIENTE</th>
+                    <th>PEDIDO</th>
+                    <th>PRECIO</th>
+                    <th>CANTIDAD</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (pedido of pedidos; track pedido.id) {
+                    <tr>
+                        <td>{{ pedido.id }}</td>
+                        <!-- <td>{{ pedido.nombre }}</td>
+                        <td>{{ pedido.descripcion }}</td>
+                        <td>{{ pedido.precio }}</td>
+                        <td>{{ pedido.cantidad }}</td> -->
+                        <td>
+                            <div>
+                                <button class="btn btn-info" [routerLink]="['/editar-pedido/'+pedido.id]">Editar</button>
+                                <button class="btn btn-danger" (click)="deleteProducto(pedido)">Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

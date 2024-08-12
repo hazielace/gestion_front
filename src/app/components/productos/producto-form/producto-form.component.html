@@ -1,0 +1,59 @@
+<div class="p-4">
+    <h2 class="mb-4">
+        @if (producto) {
+            Editar
+        }
+        @else {
+            Nuevo
+        }
+        producto
+    </h2>
+    
+    <div class="row row-cols-3 justify-content-center">
+        @if (form) {
+            <form [formGroup]="form" (ngSubmit)="save()">
+                <div class="mb-3">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="" id="nombre" formControlName="nombre" class="form-control">
+                    @if (form.get('nombre')?.hasError('required')) {
+                        <p class="invalid-feedback d-block">Campo Obligatorio</p>
+                    }
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" name="" id="descripcion" formControlName="descripcion" class="form-control">
+                    @if (form.get('descripcion')?.hasError('required')) {
+                        <p class="invalid-feedback d-block">Campo Obligatorio</p>
+                    }
+                </div>
+                <div class="mb-3">
+                    <label for="cantidad">Cantidad</label>
+                    <input type="number" name="" id="cantidad" formControlName="cantidad" class="form-control">
+                    @if (form.get('cantidad')?.hasError('required')) {
+                        <p class="invalid-feedback d-block">Campo Obligatorio</p>
+                    }
+                </div>
+                <div class="mb-3">
+                    <label for="precio">Precio</label>
+                    <input type="text" name="" id="precio" formControlName="precio" class="form-control">
+                    @if (form.get('precio')?.hasError('required')) {
+                        <p class="invalid-feedback d-block">Campo Obligatorio</p>
+                    }
+                </div>
+            
+                <div class="mt-4 text-end">
+                    <button routerLink="/productos" class="btn btn-danger me-3">Cancelar</button>
+                    <button class="btn btn-success" type="submit">    
+                        @if (producto) {
+                            Editar
+                        }
+                        @else {
+                            Nuevo
+                        }
+                        producto
+                    </button>
+                </div>
+            </form>
+        }
+    </div>
+</div>

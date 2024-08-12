@@ -1,0 +1,41 @@
+<div class="row col-12 p-4">
+    <h2 class="mb-4">Productos</h2>
+    
+    
+    <div class="text-end mb-4">
+        <button class="btn btn-primary" routerLink="/nuevo-producto">Nuevo producto</button>
+    </div>
+    
+    
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>DESCRIPCIÓN</th>
+                    <th>PRECIO</th>
+                    <th>CANTIDAD</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (producto of productos; track producto.id) {
+                    <tr>
+                        <td>{{ producto.id }}</td>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.descripcion }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>{{ producto.cantidad }}</td>
+                        <td>
+                            <div>
+                                <button class="btn btn-info" [routerLink]="['/editar-producto/'+producto.id]">Editar</button>
+                                <button class="btn btn-danger" (click)="deleteProducto(producto)">Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

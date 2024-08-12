@@ -1,0 +1,62 @@
+<!-- <div class="p-4">
+    <h2 class="mb-4">
+        @if (cliente) {
+            Editar
+        }
+        @else {
+            Nuevo
+        }
+        cliente
+    </h2>
+    
+    <div class="row row-cols-3 justify-content-center">
+        @if (form) {
+            <form [formGroup]="form" (ngSubmit)="save()">
+                <div class="mb-3">
+                    <label for="nombre">Nombres</label>
+                    <input type="text" name="" id="nombres" formControlName="nombres" class="form-control">
+                    @if (form.get('nombres')?.hasError('required')) {
+                        <p class="invalid-feedback d-block">Campo Obligatorio</p>
+                    }
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion">Apellidos</label>
+                    <input type="text" name="" id="apellidos" formControlName="apellidos" class="form-control">
+                    @if (form.get('apellidos')?.hasError('required')) {
+                        <p class="invalid-feedback d-block">Campo Obligatorio</p>
+                    }
+                </div>
+                <div class="mb-3">
+                    <label for="cantidad">Correo</label>
+                    <input type="email" name="" id="email" formControlName="email" class="form-control">
+                    @if (form.get('email')?.hasError('required')) {
+                        <p class="invalid-feedback d-block">Campo Obligatorio</p>
+                    }
+                    @if (form.get('email')?.hasError('email')) {
+                        <p class="invalid-feedback d-block">Email invalido</p>
+                    }
+                </div>
+                <div class="mb-3">
+                    <label for="precio">Teléfono</label>
+                    <input type="text" name="" id="telefono" formControlName="telefono" class="form-control">
+                    @if (form.get('telefono')?.hasError('required')) {
+                        <p class="invalid-feedback d-block">Campo Obligatorio</p>
+                    }
+                </div>
+            
+                <div class="mt-4 text-end">
+                    <button routerLink="/clientes" class="btn btn-danger me-3">Cancelar</button>
+                    <button class="btn btn-success" type="submit">    
+                        @if (cliente) {
+                            Editar
+                        }
+                        @else {
+                            Nuevo
+                        }
+                        cliente
+                    </button>
+                </div>
+            </form>
+        }
+    </div>
+</div> -->
